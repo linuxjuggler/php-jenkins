@@ -2,7 +2,7 @@
 
 <project name="YourProject" default="build" basedir=".">
     <property name="build-dir" value="${basedir}/build" />
-    <property name="src-dir" value="${basedir}/src" />
+    <property name="src-dir" value="${basedir}/app" />
 
     <target name="build"
         depends="build-common,phploc,phpdox,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpcb" />
@@ -167,7 +167,7 @@
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <exec executable="phpunit" failonerror="true">
             <arg value="-c" />
-            <arg value="${basedir}/phpunit.xml.dist" />
+            <arg value="${basedir}/phpunit.xml" />
             <arg value="--coverage-html" />
             <arg value="${build-dir}/coverage" />
             <arg value="--coverage-clover" />
